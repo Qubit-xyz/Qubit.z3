@@ -1,5 +1,5 @@
 ## Implementing MongoDB with Rig for Neuromorphic Agents 
 
-Contains the implementation of a MongoDB running a Rig Vector store and index. We use MongoDB for it's efficiency, scalability, and querying abilities. 
+Contains the implementation of a MongoDB running a Vector store and index. We use MongoDB for it's efficiency, scalability, and querying abilities. 
 
-Huge props to the people at Arc for making the integration so easy! 
+The vector store acts like the subconscious for Qubit, storing information to later be used if needed for Qubit to complete a response. 
