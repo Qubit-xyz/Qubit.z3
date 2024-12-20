@@ -1,6 +1,6 @@
 ## Neuromorphic-Compute-Framework
 
-Welcome to Qubit! Qubit is the first neuromorphic compute framework on Solana, designed to revolutionize the ai agent landscape. Qubit combines the efficieny of neuromorphic compute with LLM's to create the fastest agents available. For more information, visit our whitepaper and twitter below: 
+Welcome to Qubit! Qubit is the first neuromorphic compute framework on Solana, designed to revolutionize the ai agent landscape. Qubit combines the efficiency of neuromorphic compute with LLM's to create the fastest agents available. For more information, visit our whitepaper and twitter below: 
 
 Twitter: https://x.com/Qubit_xyz
 
