@@ -10,7 +10,7 @@ W_EPOCH_TIME = 6
 W_WEIGHTS_U = 8
 
 # Signed width of weights
-W_WEIGHTS_S = W_WEIGHTS_U + 
+W_WEIGHTS_S = W_WEIGHTS_U + 1
 
 # Unsigned width of tag 2
 W_TAG_2_U = 8
