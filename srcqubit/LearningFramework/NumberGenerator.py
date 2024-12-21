@@ -10,8 +10,6 @@ class AbstractRandomGenerator:
     @abstractmethod
     def advance(self, *args, **kwargs):
         pass
-
-
 class TraceRandom(AbstractRandomGenerator):
     """Trace random generator.
 
