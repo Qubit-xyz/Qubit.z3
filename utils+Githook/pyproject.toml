@@ -1,0 +1,183 @@
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "qubit-nc"
+packages = [
+    {include = "qubit", from = "src"},
+    {include = "tests"}
+]
+include = ["tutorials"]
+version = "0.11.0.dev0"
+readme = "README.md"
+description = "A Software Framework for Neuromorphic Computing"
+repository = "https://github.com/qubit-nc/qubit"
+authors = [ 
+    "Qubit's Neuromorphic Computing Lab"
+]
+license = "(BSD-3-Clause), (LGPL-2.1-or-later)"
+keywords = [
+    "neuromorphic",
+    "ai",
+    "artificial intelligence",
+    "neural models",
+    "spiking neural networks"
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: BSD License",
+    "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
+    "Operating System :: OS Independent"
+]
+
+[tool.poetry.urls]
+"Issue and Bug Tracker" = "https://github.com/lava-nc/lava/issues"
+"Questions and Answers" = "https://github.com/lava-nc/lava/discussions/categories/q-a"
+"Frequently Asked Questions" = "https://github.com/lava-nc/lava/wiki/Frequently-Asked-Questions-(FAQ)"
+"Discussions" = "https://github.com/lava-nc/lava/discussions"
+
+[tool.poetry.dependencies]
+python = ">=3.10, <3.11"
+
+numpy = "^1.24.4"
+scipy = "^1.10.1"
+networkx = "<=2.8.7"
+asteval = "^0.9.31"
+scikit-learn = "^1.5.0"
+
+[tool.poetry.dev-dependencies]
+bandit = "1.7.4"
+coverage = "^6.3.2"
+darglint = "^1.8.1"
+flake8 = "^4.0.1"
+flake8-bandit = "^3.0.0"
+flake8-bugbear = "^22.1.11"
+flake8-builtins = "^1.5.3"
+flake8-comprehensions = "^3.8.0"
+flake8-docstrings = "^1.6.0"
+flake8-eradicate = "^1.2.0"
+flake8-isort = "^4.1.1"
+flake8-mutable = "^1.2.0"
+flake8-pytest-style = "^1.6.0"
+flake8-spellcheck = "^0.25.0"
+flakeheaven = "^3.2.1"
+matplotlib = "^3.5.1"
+pep8-naming = "^0.12.1"
+poetry = "^1.1.13"
+unittest2 = "^1.1.0"
+pandas = "^1.4.2"
+pytest = "^7.2.0"
+pytest-cov = "^3.0.0"
+sphinx = { extras = ["toml"], version = "^4.4.0" }
+sphinx-tabs = { extras = ["toml"], version = "^3.2.0" }
+sphinx_rtd_theme = { extras = ["toml"], version = "^1.0.0" }
+autopep8 = "^1.6.0"
+ipykernel = "^6.15.0"
+nbformat = "^5.3.0"
+nbconvert = ">=7.2.10, <7.3"
+
+[tool.black]
+line-length = 80
+target-version = [
+    "py38"
+]
+include = "\\.pyi?$"
+exclude = """
+(
+  /(
+      \\.eggs
+    | \\.git
+    | \\.venv
+    | _build
+    | build
+    | dist
+  )/
+)
+"""
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "--strict-markers --cov=src/lava"
+testpaths = [
+    "tests"
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "serial",
+]
+
+[tool.coverage.run]
+relative_files = true
+source = [
+    "src/lava",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplemented()",
+    "if __name__ == .__main__.:",
+    "main()",
+    "parser\\..",
+    "argparse\\..",
+]
+
+fail_under = 65
+show_missing = true
+
+[tool.flakeheaven]
+extended_default_ignore=[]  # Fix for bug while using newer flake8 ver.
+format = "grouped"
+max_line_length = 80
+show_source = true
+exclude = ["./docs/"]
+
+[tool.flakeheaven.plugins]
+flake8-bandit = ["+*", "-S322", "-B101", "-S404", "-S602"]       # Enable a plugin, disable specific checks
+
+# Disable below plugins temporarily until lint fix is pushed
+flake8-bugbear = ["-*"]
+flake8-builtins = ["-*"]
+flake8-comprehensions = ["-*"]
+flake8-darglint = ["-*"]
+flake8-docstrings = ["-*"]
+flake8-eradicate = ["-*"]
+flake8-isort = ["-*"]
+flake8-mutable = ["-*"]
+flake8-pytest-style = ["-*"]
+flake8-spellcheck = ["-*"]
+mccabe = ["-*"]
+pep8-naming = ["-*"]
+
+# Excluding until lint fix is pushed
+# flake8-bugbear = ["+*"]                     # Enable a plugin
+# flake8-builtins = ["+*"]
+# flake8-comprehensions = ["+*"]
+# flake8-darglint = ["+*"]
+# flake8-docstrings = ["+*"]
+# flake8-eradicate = ["+*"]
+# flake8-isort = ["+*"]
+# flake8-mutable = ["+*"]
+# flake8-pytest-style = ["+*"]
+# flake8-spellcheck = ["-*"]
+# mccabe = ["+*"]
+# pep8-naming = ["+*"]
+# pyflakes = ["+*"]
+pylint = ["+*"]
+
+pycodestyle = ["+*", "-W503", "-E203"]
+# pyflakes = ["-*"]                           # Disable temporarily until lint fix is pushed
+# pylint = ["-*"]                             # Disable temporarily until lint fix is pushed
+
+[tool.flakeheaven.exceptions."tests/"]
+pycodestyle = ["-F401"]                     # Disable a check
+flake8-bandit = ["-S101"]                   # Ignore asserts for tests
+pyflakes = ["-*"]                           # Disable a plugin
