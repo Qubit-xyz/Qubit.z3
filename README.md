@@ -21,5 +21,6 @@ Our agents are entirely Rust based and work in-tandem with our neuromorphic comp
 2. [Neuromorphic Compute Framework](https://github.com/Qubit-xyz/Neuromorphic-Compute-Framework/tree/main/srcqubit)
     - [Learning Framework](https://github.com/Qubit-xyz/Neuromorphic-Compute-Framework/tree/main/srcqubit/LearningFramework)
     - [Neuromorphic Model Setup](https://github.com/Qubit-xyz/Neuromorphic-Compute-Framework/tree/main/srcqubit/ModelSetup)
+    - [Neural Network](https://github.com/Qubit-xyz/Neuromorphic-Compute-Framework/tree/main/QbtSynapseNeuralNetwork)
 4. [Blockchain Dependencies](https://github.com/Qubit-xyz/Neuromorphic-Compute-Framework/tree/main/Include%20)
 5. [Rig Vector Index for Agents](https://github.com/Qubit-xyz/Neuromorphic-Compute-Framework/tree/main/rig_prerequisites/lib)
