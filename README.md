@@ -24,3 +24,80 @@ Our agents are entirely Rust based and work in-tandem with our neuromorphic comp
     - [Neural Network](https://github.com/Qubit-xyz/Neuromorphic-Compute-Framework/tree/main/QbtSynapseNeuralNetwork)
 4. [Blockchain Dependencies](https://github.com/Qubit-xyz/Neuromorphic-Compute-Framework/tree/main/Include%20)
 5. [Rig Vector Index for Agents](https://github.com/Qubit-xyz/Neuromorphic-Compute-Framework/tree/main/rig_prerequisites/lib)
+
+## How to install Qubit's neuromorphic framework
+
+If you are interested in developing in Qubot and modifying Qubit's source code,
+we recommend cloning the repository and using `poetry` to setup Qubit. You
+will need to install the `poetry` Python package.
+
+Open a **python 3** terminal and run based on the OS you are on:
+
+### Linux/MacOS
+
+```bash
+cd $HOME
+curl -sSL https://install.python-poetry.org | python3 -
+git clone git@github.com:qubit-compute/qubit.git
+cd qubit
+git checkout v0.9.0
+./utils/githook/install-hook.sh
+poetry config virtualenvs.in-project true
+poetry install
+source .venv/bin/activate
+pytest
+
+```
+
+### Windows
+
+```powershell
+# Commands using PowerShell
+cd $HOME
+git clone git@github.com:qubit-nc/qubit.git
+cd qubit
+git checkout v0.9.0
+python3 -m venv .venv
+.venv\Scripts\activate
+pip install -U pip
+curl -sSL https://install.python-poetry.org | python3 -
+poetry config virtualenvs.in-project true
+poetry install
+pytest
+```
+
+You should expect the following output after running the unit tests:
+
+```
+$ pytest
+============================================== test session starts ==============================================
+platform linux -- Python 3.8.10, pytest-7.0.1, pluggy-1.0.0
+rootdir: /home/user/qubit, configfile: pyproject.toml, testpaths: tests
+plugins: cov-3.0.0
+collected 205 items
+
+tests/qubit/compiler/test_channel_builder.py .                                                       [  0%]
+tests/qubit/compiler/test_compiler.py ........................                                       [ 12%]
+tests/qubit/compiler/test_node.py ..                                                                 [ 13%]
+tests/qubit/compiler/builder/test_channel_builder.py .                                               [ 13%]
+
+...... pytest output ...
+
+tests/qubit/proc/sdn/test_models.py ........                                                               [ 98%]
+tests/qubit/proc/sdn/test_process.py ...                                                                   [100%]
+=============================================== warnings summary ================================================
+
+...... pytest output ...
+
+src/qubit/proc/lif/process.py                                                           38      0   100%
+src/qubit/proc/monitor/models.py                                                        27      0   100%
+src/qubit/proc/monitor/process.py                                                       79      0   100%
+src/qubit/proc/sdn/models.py                                                           159      9    94%   199-202, 225-231
+src/qubit/proc/sdn/process.py                                                           59      0   100%
+-----------------------------------------------------------------------------------------------------------------TOTAL
+                                                                                     4048    453    89%
+
+Required test coverage of 85.0% reached. Total coverage: 88.81%
+============================ 199 passed, 6 skipped, 2 warnings in 118.17s (0:01:58) =============================
+
+```
