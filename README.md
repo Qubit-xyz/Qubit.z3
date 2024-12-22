@@ -10,9 +10,16 @@ Gitbook: https://qubit-1.gitbook.io/qubit-neuromorphic-compute
 
 Our whitepaper explains **why** traditional agents are considered slow when compared to neuromorphic compute. Neuromorphic compute is the hardware setup that lies behind the agents and directly contributes to their ability to process information, respond to changes, recognize patterns, and more. 
 
-This Github details how we have our agents setup and how we incorporate it with neuromorphic compute. We want to mention that if you do not have neuromorphic hardware available and setup to handle the agents, they function as any other agent would. Our code is open-sourced and can be implemented by anyone, but it is the hardware that truly makes the agents as effective as ours. This is what we bring to the table that is unlike any other products. 
+Our agents are entirely Rust based and work in-tandem with our neuromorphic compute framework, which is built with Python and trained using open source neuromorphic SNN models.
 
-Our agents are entirely Rust based and work in-tandem with our neuromorphic compute framework, which is built with Python and trained using open source neuromorphic SNN models. 
+This Github details our agent setup and how we incorporate it with neuromorphic compute. We want to mention that if you do not have neuromorphic hardware available and setup to handle the agents, they function as any other agent would. Our code is open-sourced and can be implemented by anyone, but it is the hardware that makes the agents as effective as ours. This is what we bring to the table that is unlike any other products. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/68661711/135412508-4a93e20a-8b64-4723-a69b-de8f4b5902f7.png" alt="Lava organization" width="500"/>
+</p>
+
+Qubit supports conventional CPUs and Intel's Loihi architecture, but
+its compiler and runtime are open to extension for other architectures. 
 
 ## Table of Contents 
 
@@ -27,7 +34,7 @@ Our agents are entirely Rust based and work in-tandem with our neuromorphic comp
 
 ## How to install Qubit's neuromorphic framework
 
-If you are interested in developing in Qubot and modifying Qubit's source code,
+If you are interested in developing in Qubit and modifying Qubit's source code,
 we recommend cloning the repository and using `poetry` to setup Qubit. You
 will need to install the `poetry` Python package.
 
