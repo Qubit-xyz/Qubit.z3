@@ -45,7 +45,7 @@ Open a **python 3** terminal and run based on the OS you are on:
 ```bash
 cd $HOME
 curl -sSL https://install.python-poetry.org | python3 -
-git clone git@github.com:qubit-compute/qubit.git
+git clone git@github.com:qubit-nc/qubit.git
 cd qubit
 git checkout v0.9.0
 ./utils/githook/install-hook.sh
