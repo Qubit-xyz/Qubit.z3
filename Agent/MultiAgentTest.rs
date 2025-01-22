@@ -61,6 +61,10 @@ async fn main() -> Result<(), anyhow::Error> {
     // Create model
     let translator = EnglishTranslator::new(model);
 
+    let openai_api_key = env::var("OPENAI_API_KEY").expect("OPENAI_API_KEY not set");
+    let openai_client = OpenAIClient::new(&openai_api_key);
+    let model = openai_client.completion_model("gpt-4");
+
     // Spin up a chatbot using the agent
     cli_chatbot(translator).await?;
 
