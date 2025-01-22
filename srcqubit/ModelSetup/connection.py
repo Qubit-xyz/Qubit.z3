@@ -8,6 +8,7 @@ from lava.magma.core.learning.learning_rule import (
     LoihiLearningRule,
     Loihi2FLearningRule,
     Loihi3FLearningRule,
+    Loihi4FLearningRule,
 )
 from lava.magma.core.model.py.ports import PyInPort
 from lava.magma.core.model.py.type import LavaPyType
