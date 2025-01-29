@@ -1,10 +1,4 @@
-import typing as ty
-from abc import ABC, abstractmethod
-import logging
-from lava.utils.sparse import find
-import numpy as np
-from scipy.sparse import csr_matrix
-import platform
+
 
 from lava.magma.compiler.channels.pypychannel import (
     CspSendPort,
