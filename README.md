@@ -4,7 +4,7 @@
 
 ## 1. Introduction
 
-Introducing Qubit, an advanced agent framework utilzing DeepSeek-VL2 and Hugging Faces smolagents. DeepSeek-VL2 demonstrates superior capabilities across various tasks, including but not limited to visual question answering, optical character recognition,  document/table/chart understanding, and visual grounding.
+Introducing Qubit, an advanced agent framework utilzing DeepSeek-VL2 as the underlying LLM and RIG vectors for Solana interaction. DeepSeek-VL2 demonstrates superior capabilities across various tasks, including but not limited to visual question answering, optical character recognition,  document/table/chart understanding, and visual grounding. Compared to other OpenSource models, it is by far the most efficient and cost effective. Our code can be tweaked to utilize any LLM, but we recommend Deepseek-VL2. 
 
 DeepSeek-VL2 achieves competitive or state-of-the-art performance with similar or fewer activated parameters compared to existing open-source dense and MoE-based models. This allows agents to be cost and energy efficient for anyone looking to spin up a twitter, github, or discord agent. 
 
