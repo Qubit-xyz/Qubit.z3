@@ -671,10 +671,7 @@ class DeepseekVLV2ForCausalLM(DeepseekVLV2PreTrainedModel):
         # If we're in cached decoding stage, pixel values should be None because input ids do not contain special image token anymore
         # Otherwise we need pixel values to be passed to model
         cache_position = model_inputs["cache_position"]
-        if cache_position[0] == 0:
-            model_inputs["images"] = images
-            model_inputs["images_seq_mask"] = images_seq_mask
-            model_inputs["images_spatial_crop"] = images_spatial_crop
+
 
         return model_inputs
 
